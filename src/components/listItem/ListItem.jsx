@@ -40,8 +40,8 @@ export default function ListItem({ index }) {
             <div className="genre">Hành động</div>
             <br></br>
             <div className="desc">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Praesentium hic rem eveniet error possimus, neque ex doloribus.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+              Aliquam veritatis, nobis libero sint nesciunt magni.
             </div>
             
           </div>
