@@ -1,6 +1,7 @@
 import { ArrowDropDown, Notifications, Search } from "@material-ui/icons"
 import { useState } from "react";
 import "./navbar.scss"
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false); //fix transparent cua navbar; top = false (trans), scroll = true
@@ -16,8 +17,12 @@ const Navbar = () => {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
                         alt="" />
                     <span>Trang chủ</span>
+                    <Link to="/series" className="link">
                     <span>Phim bộ</span>
+                    </Link>
+                    <Link to="/movies" className="link">
                     <span>Phim điện ảnh</span>
+                    </Link>
                     <span>Phim mới & Phổ biến</span>
                     <span>Yêu thích</span>
                 </div>
