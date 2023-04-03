@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import "./list.css";
-import { Publish } from "@material-ui/icons";
 
 export default function List() {
   const location = useLocation();
@@ -8,9 +7,9 @@ export default function List() {
   return (
     <div className="product">
       <div className="productTitleContainer">
-        <h1 className="productTitle">List</h1>
+        <h1 className="productTitle">Danh sách</h1>
         <Link to="/newList">
-          <button className="productAddButton">Create</button>
+          <button className="productAddButton">Tạo mới</button>
         </Link>
       </div>
       <div className="productTop">
@@ -24,11 +23,11 @@ export default function List() {
               <span className="productInfoValue">{list._id}</span>
             </div>
             <div className="productInfoItem">
-              <span className="productInfoKey">genre:</span>
+              <span className="productInfoKey">Thể loại:</span>
               <span className="productInfoValue">{list.genre}</span>
             </div>
             <div className="productInfoItem">
-              <span className="productInfoKey">type:</span>
+              <span className="productInfoKey">Kiểu:</span>
               <span className="productInfoValue">{list.type}</span>
             </div>
           </div>
@@ -37,15 +36,15 @@ export default function List() {
       <div className="productBottom">
         <form className="productForm">
           <div className="productFormLeft">
-            <label>List Title</label>
+            <label>Danh sách</label>
             <input type="text" placeholder={list.title} />
-            <label>Type</label>
+            <label>Kiểu (Truyền hình/bộ)</label>
             <input type="text" placeholder={list.type} />
-            <label>Genre</label>
+            <label>Thể loại</label>
             <input type="text" placeholder={list.genre} />
           </div>
           <div className="productFormRight">
-            <button className="productButton">Update</button>
+            <button className="productButton">Cập nhật</button>
           </div>
         </form>
       </div>

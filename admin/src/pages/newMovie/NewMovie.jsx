@@ -3,6 +3,8 @@ import "./newMovie.css";
 import storage from "../../firebase";
 import { createMovie } from "../../context/movieContext/apiCalls";
 import { MovieContext } from "../../context/movieContext/MovieContext";
+import { useHistory } from "react-router-dom";
+
 
 export default function NewMovie() {
   const [movie, setMovie] = useState(null);
@@ -12,6 +14,7 @@ export default function NewMovie() {
   const [trailer, setTrailer] = useState(null);
   const [video, setVideo] = useState(null);
   const [uploaded, setUploaded] = useState(0);
+  const history = useHistory()
 
   const { dispatch } = useContext(MovieContext);
 
@@ -60,14 +63,15 @@ export default function NewMovie() {
   const handleSubmit = (e) => {
     e.preventDefault();
     createMovie(movie, dispatch);
+    history.push("/movies")
   };
 
   return (
     <div className="newProduct">
-      <h1 className="addProductTitle">New Movie</h1>
+      <h1 className="addProductTitle">Phim mới</h1>
       <form className="addProductForm">
         <div className="addProductItem">
-          <label>Image</label>
+          <label>Ảnh</label>
           <input
             type="file"
             id="img"
@@ -76,7 +80,7 @@ export default function NewMovie() {
           />
         </div>
         <div className="addProductItem">
-          <label>Title image</label>
+          <label>Ảnh bìa</label>
           <input
             type="file"
             id="imgTitle"
@@ -85,7 +89,7 @@ export default function NewMovie() {
           />
         </div>
         <div className="addProductItem">
-          <label>Thumbnail image</label>
+          <label>Ảnh thumbnail</label>
           <input
             type="file"
             id="imgSm"
@@ -103,52 +107,52 @@ export default function NewMovie() {
           />
         </div>
         <div className="addProductItem">
-          <label>Description</label>
+          <label>Mô tả</label>
           <input
             type="text"
-            placeholder="description"
+            placeholder="Mô tả"
             name="desc"
             onChange={handleChange}
           />
         </div>
         <div className="addProductItem">
-          <label>Year</label>
+          <label>Năm xuất bản</label>
           <input
             type="text"
-            placeholder="Year"
+            placeholder="Năm"
             name="year"
             onChange={handleChange}
           />
         </div>
         <div className="addProductItem">
-          <label>Genre</label>
+          <label>Thể loại</label>
           <input
             type="text"
-            placeholder="Genre"
+            placeholder="Thể loại"
             name="genre"
             onChange={handleChange}
           />
         </div>
         <div className="addProductItem">
-          <label>Duration</label>
+          <label>Thời lượng</label>
           <input
             type="text"
-            placeholder="Duration"
+            placeholder="Thời lượng"
             name="duration"
             onChange={handleChange}
           />
         </div>
         <div className="addProductItem">
-          <label>Limit</label>
+          <label>Giới hạn độ tuổi</label>
           <input
             type="text"
-            placeholder="limit"
+            placeholder="Độ tuổi"
             name="limit"
             onChange={handleChange}
           />
         </div>
         <div className="addProductItem">
-          <label>Is Series?</label>
+          <label>Là phim bộ?</label>
           <select name="isSeries" id="isSeries" onChange={handleChange}>
             <option value="false">No</option>
             <option value="true">Yes</option>
@@ -172,11 +176,11 @@ export default function NewMovie() {
         </div>
         {uploaded === 5 ? (
           <button className="addProductButton" onClick={handleSubmit}>
-            Create
+            Tạo mới
           </button>
         ) : (
           <button className="addProductButton" onClick={handleUpload}>
-            Upload
+            Đăng tải
           </button>
         )}
       </form>

@@ -1,13 +1,26 @@
+// import { initializeApp } from 'firebase/app';
+// import { getStorage } from 'firebase/storage';
+
+// const firebaseConfig = {
+
+// };
+
+// const app = initializeApp(firebaseConfig);
+// const storage = getStorage(app);
+
+// export { storage };
+
+
 import firebase from "firebase";
 
 const firebaseConfig = {
-  apiKey: process.env.APP_KEY,
-  authDomain: "netflix-151df.firebaseapp.com",
-  projectId: "netflix-151df",
-  storageBucket: "netflix-151df.appspot.com",
-  messagingSenderId: "316700975498",
-  appId: "1:316700975498:web:15063159b205c1a349a873",
-  measurementId: "G-2ZGE63ES9F",
+  apiKey: "AIzaSyD1RJYwOjJDzQUxnn2m9DhTQ9tP1fWwLcw",
+  authDomain: "netflix-99af9.firebaseapp.com",
+  projectId: "netflix-99af9",
+  storageBucket: "netflix-99af9.appspot.com",
+  messagingSenderId: "45338647724",
+  appId: "1:45338647724:web:6aa91c1826bb0c360ad309",
+  measurementId: "G-LG793KQC81"
 };
 
 firebase.initializeApp(firebaseConfig);

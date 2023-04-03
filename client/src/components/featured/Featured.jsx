@@ -51,10 +51,11 @@ export default function Featured({ type, setGenre }) {
           </select>
         </div>
       )}
-      <img src={content.img} alt="" />
+      <img src={content?.img} alt="" />
+
       <div className="info">
-        <img src={content.imgTitle} alt="" />
-        <span className="desc">{content.desc}</span>
+      <img src={content?.imgTitle} alt="" />
+      <span className="desc">{content?.desc}</span>
         <div className="buttons">
           <button className="play">
             <PlayArrow />

@@ -21,21 +21,21 @@ export default function Sidebar() {
     <div className="sidebar">
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Dashboard</h3>
+          <h3 className="sidebarTitle">Trang quản lý</h3>
           <ul className="sidebarList">
             <Link to="/" className="link">
               <li className="sidebarListItem active">
                 <LineStyle className="sidebarIcon" />
-                Home
+                Trang Chủ
               </li>
             </Link>
             <li className="sidebarListItem">
               <Timeline className="sidebarIcon" />
-              Analytics
+              Thống kê
             </li>
             <li className="sidebarListItem">
               <TrendingUp className="sidebarIcon" />
-              Sales
+              Doanh số
             </li>
           </ul>
         </div>
@@ -45,31 +45,31 @@ export default function Sidebar() {
             <Link to="/users" className="link">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
-                Users
+                Người dùng
               </li>
             </Link>
             <Link to="/movies" className="link">
               <li className="sidebarListItem">
                 <PlayCircleOutline className="sidebarIcon" />
-                Movies
+                Phim
               </li>
             </Link>
             <Link to="/lists" className="link">
               <li className="sidebarListItem">
                 <List className="sidebarIcon" />
-                Lists
+                Danh sách phim
               </li>
             </Link>
             <Link to="/newMovie" className="link">
               <li className="sidebarListItem">
                 <AddToQueue className="sidebarIcon" />
-                Add Movie
+                Thêm phim
               </li>
             </Link>
             <Link to="/newList" className="link">
               <li className="sidebarListItem">
                 <QueuePlayNext className="sidebarIcon" />
-                Add List
+                Thêm Danh Sách
               </li>
             </Link>
           </ul>
@@ -83,11 +83,11 @@ export default function Sidebar() {
             </li>
             <li className="sidebarListItem">
               <DynamicFeed className="sidebarIcon" />
-              Feedback
+              Phản hồi
             </li>
             <li className="sidebarListItem">
               <ChatBubbleOutline className="sidebarIcon" />
-              Messages
+              Tin nhắn
             </li>
           </ul>
         </div>
@@ -100,11 +100,11 @@ export default function Sidebar() {
             </li>
             <li className="sidebarListItem">
               <Timeline className="sidebarIcon" />
-              Analytics
+              Phân tích
             </li>
             <li className="sidebarListItem">
               <Report className="sidebarIcon" />
-              Reports
+              Báo cáo
             </li>
           </ul>
         </div>

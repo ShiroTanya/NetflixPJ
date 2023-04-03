@@ -19,9 +19,9 @@ export default function ListList() {
 
   const columns = [
     { field: "_id", headerName: "ID", width: 250 },
-    { field: "title", headerName: "title", width: 250 },
-    { field: "genre", headerName: "Genre", width: 150 },
-    { field: "type", headerName: "type", width: 150 },
+    { field: "title", headerName: "Tựa đề", width: 250 },
+    { field: "genre", headerName: "Thể loại", width: 150 },
+    { field: "type", headerName: "Kiểu", width: 150 },
     {
       field: "action",
       headerName: "Action",
@@ -32,7 +32,7 @@ export default function ListList() {
             <Link
               to={{ pathname: "/list/" + params.row._id, list: params.row }}
             >
-              <button className="productListEdit">Edit</button>
+              <button className="productListEdit">Chỉnh sửa</button>
             </Link>
             <DeleteOutline
               className="productListDelete"
