@@ -71,7 +71,7 @@ export default function NewMovie() {
       <h1 className="addProductTitle">Phim mới</h1>
       <form className="addProductForm">
         <div className="addProductItem">
-          <label>Ảnh</label>
+          <label>Ảnh thumbnail</label>
           <input
             type="file"
             id="img"
@@ -80,7 +80,7 @@ export default function NewMovie() {
           />
         </div>
         <div className="addProductItem">
-          <label>Ảnh bìa</label>
+          <label>Ảnh chính</label>
           <input
             type="file"
             id="imgTitle"
@@ -89,7 +89,7 @@ export default function NewMovie() {
           />
         </div>
         <div className="addProductItem">
-          <label>Ảnh thumbnail</label>
+          <label>Ảnh bìa</label>
           <input
             type="file"
             id="imgSm"
@@ -154,8 +154,8 @@ export default function NewMovie() {
         <div className="addProductItem">
           <label>Là phim bộ?</label>
           <select name="isSeries" id="isSeries" onChange={handleChange}>
-            <option value="false">No</option>
-            <option value="true">Yes</option>
+            <option value="false">Không</option>
+            <option value="true">Có</option>
           </select>
         </div>
         <div className="addProductItem">

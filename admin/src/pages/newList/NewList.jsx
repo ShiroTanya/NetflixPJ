@@ -61,8 +61,8 @@ export default function NewList() {
             <label>Loại</label>
             <select name="type" onChange={handleChange}>
               <option>Loại</option>
-              <option value="truyền hình">Truyền hình</option>
-              <option value="phim bộ">Phim Bộ</option>
+              <option value="movie">Phim lẻ</option>
+              <option value="series">Phim Bộ</option>
             </select>
           </div>
         </div>

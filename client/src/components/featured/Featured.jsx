@@ -35,26 +35,27 @@ export default function Featured({ type, setGenre }) {
             onChange={(e) => setGenre(e.target.value)}
           >
             <option>Thể loại</option>
-            <option value="adventure">Phiêu lưu</option>
-            <option value="comedy">Hài kịch</option>
-            <option value="crime">Tâm lý tội phạm</option>
-            <option value="fantasy">Viễn Tưởng</option>
-            <option value="historical">Lịch sử</option>
-            <option value="horror">Kinh dị</option>
-            <option value="romance">Lãng mạn</option>
-            <option value="sci-fi">Khoa học - Viễn tưởng</option>
-            <option value="thriller">Kinh dị</option>
-            <option value="western">Châu Âu</option>
-            <option value="animation">Hoạt hình</option>
-            <option value="drama">Chính kịch</option>
-            <option value="documentary">Tài liệu</option>
+            <option value="Hành động">Hành động</option>
+            <option value="Phiêu lưu">Phiêu lưu</option>
+            <option value="Hài kịch">Hài kịch</option>
+            <option value="Tâm lý tội phạm">Tâm lý tội phạm</option>
+            <option value="Viễn tưởng">Viễn tưởng</option>
+            <option value="Lịch sử">Lịch sử</option>
+            <option value="Kinh dị">Kinh dị</option>
+            <option value="Lãng mạng">Lãng mạng</option>
+            <option value="Khoa học - Viễn tưởng">Khoa học - Viễn tưởng</option>
+            <option value="Kinh dị">Kinh dị</option>
+            <option value="Trinh thám">Trinh thám</option>
+            <option value="Hoạt hình">Hoạt hình</option>
+            <option value="Chính kịch">Chính kịch</option>
           </select>
         </div>
       )}
+      
       <img src={content?.img} alt="" />
 
       <div className="info">
-      <img src={content?.imgTitle} alt="" />
+      <img src={content?.imgTitle} alt=""/>
       <span className="desc">{content?.desc}</span>
         <div className="buttons">
           <button className="play">

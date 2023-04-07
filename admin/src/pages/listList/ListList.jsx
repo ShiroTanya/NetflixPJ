@@ -24,7 +24,7 @@ export default function ListList() {
     { field: "type", headerName: "Kiểu", width: 150 },
     {
       field: "action",
-      headerName: "Action",
+      headerName: "Thao tác",
       width: 150,
       renderCell: (params) => {
         return (

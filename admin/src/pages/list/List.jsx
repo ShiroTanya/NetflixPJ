@@ -38,7 +38,7 @@ export default function List() {
           <div className="productFormLeft">
             <label>Danh sách</label>
             <input type="text" placeholder={list.title} />
-            <label>Kiểu (Truyền hình/bộ)</label>
+            <label>Kiểu (Lẻ/bộ)</label>
             <input type="text" placeholder={list.type} />
             <label>Thể loại</label>
             <input type="text" placeholder={list.genre} />

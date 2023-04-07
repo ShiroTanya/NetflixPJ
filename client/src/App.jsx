@@ -13,7 +13,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={user ? <Home /> : <Navigate to="/register" />} />
+        <Route exact path="/" element={user ? <Home /> : <Navigate to="/register" />} />
         <Route path="/register" element={!user ? <Register /> : <Navigate to="/" />} />
         <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
         {user && (

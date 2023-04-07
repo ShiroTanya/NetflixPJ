@@ -28,14 +28,14 @@ const Navbar = () => {
             <span className="navbarmainLinks">Phim Bộ</span>
           </Link>
           <Link to="/movies" className="link">
-            <span className="navbarmainLinks">Phim Điện Ảnh</span>
+            <span className="navbarmainLinks">Phim Lẻ</span>
           </Link>
           <span>Phim mới & Phổ biến</span>
           <span>Yêu Thích</span>
         </div>
         <div className="right">
           <Search className="icon" />
-          <span>Trẻ em</span>
+          <span>TEST</span>
           <Notifications className="icon" />
           <img
             src="https://img5.thuthuatphanmem.vn/uploads/2021/07/14/logo-hutech-tron_012635653.png"
