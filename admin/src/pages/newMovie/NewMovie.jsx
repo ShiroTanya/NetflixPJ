@@ -14,7 +14,8 @@ export default function NewMovie() {
   const [trailer, setTrailer] = useState(null);
   const [video, setVideo] = useState(null);
   const [uploaded, setUploaded] = useState(0);
-  const history = useHistory()
+  const history = useHistory();
+  const [loading, setLoading] = useState(null);
 
   const { dispatch } = useContext(MovieContext);
 
@@ -50,6 +51,8 @@ export default function NewMovie() {
   };
 
   const handleUpload = (e) => {
+    if (uploaded === 0) {
+      setLoading(true);
     e.preventDefault();
     upload([
       { file: img, label: "img" },
@@ -58,6 +61,7 @@ export default function NewMovie() {
       { file: trailer, label: "trailer" },
       { file: video, label: "video" },
     ]);
+  } else setLoading(false);
   };
 
   const handleSubmit = (e) => {
@@ -98,7 +102,7 @@ export default function NewMovie() {
           />
         </div>
         <div className="addProductItem">
-          <label>Title</label>
+          <label>Tựa đề</label>
           <input
             type="text"
             placeholder="John Wick"
@@ -175,13 +179,15 @@ export default function NewMovie() {
           />
         </div>
         {uploaded === 5 ? (
-          <button className="addProductButton" onClick={handleSubmit}>
-            Tạo mới
-          </button>
-        ) : (
-          <button className="addProductButton" onClick={handleUpload}>
-            Đăng tải
-          </button>
+              <button className="addProductButton" onClick={handleSubmit}>
+                Tạo mới
+              </button>
+            ) : loading ? (
+              <span>Đang tải...</span>
+            ) : (
+              <button className="addProductButton" onClick={handleUpload}>
+                Đăng tải
+              </button>
         )}
       </form>
     </div>

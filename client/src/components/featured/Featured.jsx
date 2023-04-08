@@ -41,7 +41,6 @@ export default function Featured({ type, setGenre }) {
             <option value="Tâm lý tội phạm">Tâm lý tội phạm</option>
             <option value="Viễn tưởng">Viễn tưởng</option>
             <option value="Lịch sử">Lịch sử</option>
-            <option value="Kinh dị">Kinh dị</option>
             <option value="Lãng mạng">Lãng mạng</option>
             <option value="Khoa học - Viễn tưởng">Khoa học - Viễn tưởng</option>
             <option value="Kinh dị">Kinh dị</option>

@@ -113,6 +113,7 @@
 }
 
 .productFormRight{
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -122,8 +123,17 @@
   display: flex;
   align-items: center;
 }
+.addListItem{
+  display: flex;
+  flex-direction: column;
+}
+
+.addListItem > label {
+  margin: 15px 0;
+}
 
 .productButton{
+  margin-top: 40px;
   border: none;
   padding: 5px;
   border-radius: 5px;

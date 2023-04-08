@@ -11,7 +11,7 @@ import {
   getMoviesSuccess,
   updateMovieFailure,
   updateMovieStart,
-  updateMovieSuccess
+  updateMovieSuccess,
 } from "./MovieActions";
 
 export const getMovies = async (dispatch) => {
@@ -19,7 +19,8 @@ export const getMovies = async (dispatch) => {
   try {
     const res = await axios.get("/movies", {
       headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        token:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjk1NjE4MmEzMzA0MjJkYzcyNTEyMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDkyNzQ3MCwiZXhwIjoxNjgxMzU5NDcwfQ.v96uu-IDsFgAaJj8ehgxkiInna4mjE0RE4VCwfbA3nU",
       },
     });
     dispatch(getMoviesSuccess(res.data));
@@ -34,7 +35,8 @@ export const createMovie = async (movie, dispatch) => {
   try {
     const res = await axios.post("/movies", movie, {
       headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        token:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjk1NjE4MmEzMzA0MjJkYzcyNTEyMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDkyNzQ3MCwiZXhwIjoxNjgxMzU5NDcwfQ.v96uu-IDsFgAaJj8ehgxkiInna4mjE0RE4VCwfbA3nU",
       },
     });
     dispatch(createMovieSuccess(res.data));
@@ -49,7 +51,8 @@ export const deleteMovie = async (id, dispatch) => {
   try {
     await axios.delete("/movies/" + id, {
       headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        token:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjk1NjE4MmEzMzA0MjJkYzcyNTEyMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDkyNzQ3MCwiZXhwIjoxNjgxMzU5NDcwfQ.v96uu-IDsFgAaJj8ehgxkiInna4mjE0RE4VCwfbA3nU",
       },
     });
     dispatch(deleteMovieSuccess(id));
@@ -59,14 +62,30 @@ export const deleteMovie = async (id, dispatch) => {
 };
 
 //update
-export const updateMovie = async (id, updatedMovie, dispatch) => {
+export const updateMovies = async (values, item, dispatch) => {
   dispatch(updateMovieStart());
   try {
-    const res = await axios.put("/movies/" + id, updatedMovie, {
-      headers: {
-        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+    const res = await axios.put(
+      "/movies/" + item._id,
+      {
+        title: values.title,
+        desc:values.desc,
+        imgTitle:values.imgTitle,
+        imgSm:values.imgSm,
+        year: values.year,
+        genre: values.genre,
+        limit: values.limit,
+        trailer: values.trailer,
+        video: values.video,
+        img: values.img,
       },
-    });
+      {
+        headers: {
+          token:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjk1NjE4MmEzMzA0MjJkYzcyNTEyMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDkyNzQ3MCwiZXhwIjoxNjgxMzU5NDcwfQ.v96uu-IDsFgAaJj8ehgxkiInna4mjE0RE4VCwfbA3nU",
+        },
+      }
+    );
     dispatch(updateMovieSuccess(res.data));
   } catch (err) {
     dispatch(updateMovieFailure());

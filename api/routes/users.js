@@ -32,6 +32,7 @@ router.put("/:id", verify, async (req, res) => {
 
 //DELETE
 router.delete("/:id", verify, async (req, res) => {
+  console.log('delete', req.user)
   if (req.user.id === req.params.id || req.user.isAdmin) {
     try {
       await User.findByIdAndDelete(req.params.id);
@@ -56,20 +57,25 @@ router.get("/find/:id", async (req, res) => {
   }
 });
 
-//GET ALL
+
 router.get("/", verify, async (req, res) => {
-  const query = req.query.new;
-  if (req.user.isAdmin) {
-    try {
-      const users = query
-        ? await User.find().sort({ _id: -1 }).limit(5)
-        : await User.find();
-      res.status(200).json(users);
-    } catch (err) {
-      res.status(500).json(err);
+  try {
+    const query = req.query.new;
+    if (req.user.isAdmin) {
+      try {
+        const users = query
+          ? await User.find().sort({ _id: -1 }).limit(5)
+          : await User.find();
+        res.status(200).json(users);
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    } else {
+      res.status(403).json("Ban khong duoc phep xem user khac!");
     }
-  } else {
-    res.status(403).json("Ban khong duoc phep xem user khac!");
+  } catch (err) {
+    // res.status(500).json(err);
+    // console.log(err)
   }
 });
 
