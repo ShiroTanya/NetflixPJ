@@ -79,7 +79,7 @@ export default function List() {
               onChange={handleChange}
               name="title"
             />
-            <label>Kiểu (Lẻ/bộ)</label>
+            <label>Kiểu (Series/movie)</label>
             <input
               type="text"
               placeholder={list?list.type:''}

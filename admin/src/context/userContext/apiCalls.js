@@ -45,7 +45,8 @@ import {
         },
         {
             headers: {
-                token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjk1NjE4MmEzMzA0MjJkYzcyNTEyMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDkyNzQ3MCwiZXhwIjoxNjgxMzU5NDcwfQ.v96uu-IDsFgAaJj8ehgxkiInna4mjE0RE4VCwfbA3nU",
+              authorization:
+              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
             },
         }
       );
@@ -60,7 +61,8 @@ import {
     try {
       await axios.delete("/users/" + id, {
         headers: {
-            token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjk1NjE4MmEzMzA0MjJkYzcyNTEyMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDkyNzQ3MCwiZXhwIjoxNjgxMzU5NDcwfQ.v96uu-IDsFgAaJj8ehgxkiInna4mjE0RE4VCwfbA3nU",
+          authorization:
+          "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
         },
       });
       dispatch(deleteUsersSuccess(id));
@@ -74,7 +76,8 @@ import {
     try {
       const res = await axios.post("/auth/register", user, {
         headers: {
-            token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjk1NjE4MmEzMzA0MjJkYzcyNTEyMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDkyNzQ3MCwiZXhwIjoxNjgxMzU5NDcwfQ.v96uu-IDsFgAaJj8ehgxkiInna4mjE0RE4VCwfbA3nU",
+          authorization:
+          "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
         },
       });
       dispatch(createUsersSuccess(res.data));

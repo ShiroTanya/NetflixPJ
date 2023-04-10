@@ -19,7 +19,8 @@ export const getLists = async (dispatch) => {
   try {
     const res = await axios.get("/lists", {
       headers: {
-        token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjk1NjE4MmEzMzA0MjJkYzcyNTEyMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDkyNzQ3MCwiZXhwIjoxNjgxMzU5NDcwfQ.v96uu-IDsFgAaJj8ehgxkiInna4mjE0RE4VCwfbA3nU",
+        authorization:
+        "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
       },
     });
     dispatch(getListsSuccess(res.data));
@@ -34,7 +35,8 @@ export const createList = async (list, dispatch) => {
   try {
     const res = await axios.post("/lists", list, {
       headers: {
-        token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjk1NjE4MmEzMzA0MjJkYzcyNTEyMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDkyNzQ3MCwiZXhwIjoxNjgxMzU5NDcwfQ.v96uu-IDsFgAaJj8ehgxkiInna4mjE0RE4VCwfbA3nU",
+        authorization:
+              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
       },
     });
     dispatch(createListSuccess(res.data));
@@ -49,7 +51,8 @@ export const deleteList = async (id, dispatch) => {
   try {
     await axios.delete("/lists/" + id, {
       headers: {
-        token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjk1NjE4MmEzMzA0MjJkYzcyNTEyMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDkyNzQ3MCwiZXhwIjoxNjgxMzU5NDcwfQ.v96uu-IDsFgAaJj8ehgxkiInna4mjE0RE4VCwfbA3nU",
+        authorization:
+              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
       },
     });
     dispatch(deleteListSuccess(id));
@@ -71,8 +74,8 @@ export const updateLists = async (lists, list, dispatch) => {
       },
       {
         headers: {
-          token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0Mjk1NjE4MmEzMzA0MjJkYzcyNTEyMiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY4MDkyOTMzNywiZXhwIjoxNjgxMzYxMzM3fQ.shLYSvy1CKBRT4jOEwVJ6j9zqPlll1nXJ0RfuWn43CY"
-          ,
+          authorization:
+              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,       
         },
       }
     );
